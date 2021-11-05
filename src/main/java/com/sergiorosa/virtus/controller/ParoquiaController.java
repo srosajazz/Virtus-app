@@ -27,15 +27,13 @@ public class ParoquiaController {
 		return ResponseEntity.ok(service.getParoquiasPorCidade(c, page));
 	}
 	
-	@GetMapping("/paroquia/{id}")
-	public ResponseEntity<Paroquia> recuperarPeloId(@PathVariable int id){
-		
+	@GetMapping("/paroquias/{id}")
+	public ResponseEntity<Paroquia> recupearPeloId(@PathVariable int id){
 		Paroquia p = service.getParoquiaPeloId(id);
-		if(p != null) {
+		if (p != null) {
 			return ResponseEntity.ok(p);
 		}
 		return ResponseEntity.notFound().build();
-		
 	}
 }
 

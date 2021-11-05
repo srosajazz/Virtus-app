@@ -8,8 +8,7 @@ import com.sergiorosa.virtus.model.Cidade;
 import com.sergiorosa.virtus.model.Paroquia;
 
 public interface ParoquiaDAO extends JpaRepository<Paroquia, Integer> {
-	
+
 	public Page<Paroquia>findAllByCidade(Cidade c, Pageable page);
 }
-
 

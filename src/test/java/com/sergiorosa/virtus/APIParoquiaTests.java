@@ -14,20 +14,20 @@ import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
 @AutoConfigureMockMvc
 public class APIParoquiaTests {
 	
-	
-	@Autowired 
-	private MockMvc mockMvc;
+	@Autowired
+	private MockMvc mockMvc; // esse cara vai efetivamente chamar a API
 	
 	@Test
-	public void shouldReturnListaDeParoquias() throws Exception {
-		mockMvc.perform(MockMvcRequestBuilders.get("/paroquias?cidade=1&page=1"))
-		.andExpect(MockMvcResultMatchers.status().isOk())
-		.andDo(MockMvcResultHandlers.print());
+	public void shouldReturnListaDeEstados() throws Exception {
+		mockMvc.perform(MockMvcRequestBuilders.get("/estados"))
+			.andExpect(MockMvcResultMatchers.status().isOk())
+			.andDo(MockMvcResultHandlers.print());
 	}
 	
 	@Test
-	public void shouldNotReturnDetalhesDaParoquia() throws Exception{
-		mockMvc.perform(MockMvcRequestBuilders.get("/paroquias/1"))
-		.andExpect(MockMvcResultMatchers.status().isOk());
+	public void shouldReturnEstadoValido() throws Exception {
+		mockMvc.perform(MockMvcRequestBuilders.get("/estados/11"))
+		.andExpect(MockMvcResultMatchers.status().isOk())
+		.andDo(MockMvcResultHandlers.print());
 	}
 }

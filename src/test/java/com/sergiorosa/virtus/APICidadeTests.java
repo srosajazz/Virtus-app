@@ -13,22 +13,21 @@ import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
 @AutoConfigureMockMvc
 public class APICidadeTests {
 	
-	
 	@Autowired
-	private MockMvc mockMvc; // API call
+	private MockMvc mockMvc;
 	
 	@Test
-	public void shouldReturnCidadePeloId() throws Exception {
+	public void shouldReturnCidadePeloId() throws Exception{
 		mockMvc.perform(MockMvcRequestBuilders.get("/cidades/1"))
-				.andExpect(MockMvcResultMatchers.status().isOk())
-				.andDo(MockMvcResultHandlers.print());
-	}
-	
-	@Test
-	public void shouldReturnCidadePeloEstado() throws Exception {
-		mockMvc.perform(MockMvcRequestBuilders.get("/cidades?estado=11"))
-				.andExpect(MockMvcResultMatchers.status().isOk())
-				.andDo(MockMvcResultHandlers.print());
+		.andExpect(MockMvcResultMatchers.status().isOk())
+		.andDo(MockMvcResultHandlers.print());
 	}
 
+	
+	@Test
+	public void shouldReturnCidadesPeloEstado() throws Exception{
+		mockMvc.perform(MockMvcRequestBuilders.get("/cidades?estado=11"))
+		.andExpect(MockMvcResultMatchers.status().isOk())
+		.andDo(MockMvcResultHandlers.print());
+	}
 }
