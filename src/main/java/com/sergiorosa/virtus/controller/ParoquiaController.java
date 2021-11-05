@@ -21,7 +21,8 @@ public class ParoquiaController {
 	private IParoquiaService service;
 	
 	@GetMapping("/paroquias")
-	public ResponseEntity<Page<Paroquia>> recuperarPelaCidade(@RequestParam(name="cidade") int cidade, @RequestParam(name="page", defaultValue = "0") int page){
+	public ResponseEntity<Page<Paroquia>> recuperarPelaCidade(@RequestParam(name="cidade")
+							int cidade, @RequestParam(name="page", defaultValue = "0") int page){
 		Cidade c = new Cidade();
 		c.setId(cidade);
 		return ResponseEntity.ok(service.getParoquiasPorCidade(c, page));
