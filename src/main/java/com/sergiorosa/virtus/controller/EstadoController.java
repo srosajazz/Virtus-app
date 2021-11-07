@@ -19,12 +19,10 @@ public class EstadoController {
 	@Autowired
 	private IEstadoService estadoService;
 	
-	
 	@GetMapping("/estados")
 	public ResponseEntity<List<Estado>> recuperarTodos(){
 		return ResponseEntity.ok(estadoService.getAllEstados());
 	}
-	
 	
 	@GetMapping("/estados/{id}")
 	public ResponseEntity<Estado> recuperarPeloId(@PathVariable int id){

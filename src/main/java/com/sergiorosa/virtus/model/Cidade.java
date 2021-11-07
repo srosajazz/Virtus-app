@@ -12,13 +12,11 @@ import javax.persistence.Table;
 @Entity
 @Table(name="tb_cidade")
 public class Cidade {
-	
-	
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name="id")
+
+	@Id	
+	@Column(name = "id")
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private int id;
-	
 	
 	@Column(name = "nome", length = 150, nullable = false)
 	private String nome;
@@ -26,8 +24,6 @@ public class Cidade {
 	@ManyToOne
 	@JoinColumn(name="id_estado")
 	private Estado estado;
-	
-	
 
 	public int getId() {
 		return id;
@@ -52,4 +48,5 @@ public class Cidade {
 	public void setEstado(Estado estado) {
 		this.estado = estado;
 	}
+	
 }

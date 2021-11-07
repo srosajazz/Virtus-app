@@ -6,8 +6,8 @@ import com.sergiorosa.virtus.model.Cidade;
 import com.sergiorosa.virtus.model.Estado;
 
 public interface ICidadeService {
-	
-		public List<Cidade> getCidadesByEstado(Estado e);
+	public List<Cidade> getCidadesByEstado(Estado e);
 
-		public Cidade getCidadeById(int id);
+	public Cidade getCidadeById(int id);
+
 }

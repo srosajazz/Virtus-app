@@ -21,24 +21,20 @@ public class CidadeController {
 	@Autowired
 	private ICidadeService cidadeService;
 	
-	
 	@GetMapping("/cidades/{id}")
 	public ResponseEntity<Cidade> recuperarPeloId(@PathVariable int id){
 		Cidade c = cidadeService.getCidadeById(id);
-		
 		if (c != null) {
 			return ResponseEntity.ok(c);
 		}
 		return ResponseEntity.notFound().build();
 	}
 	
+	
 	@GetMapping("/cidades")
-	public ResponseEntity<List<Cidade>> recuperarPeloEstado(@RequestParam(name = "estado") int estado){
+	public ResponseEntity<List<Cidade>> recuperarPeloEstado(@RequestParam(name="estado") int estado){
 		Estado e = new Estado();
 		e.setId(estado);
 		return ResponseEntity.ok(cidadeService.getCidadesByEstado(e));
- 	}
-	
-	
-
+	}
 }

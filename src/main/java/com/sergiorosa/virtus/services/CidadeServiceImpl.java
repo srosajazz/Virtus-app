@@ -12,20 +12,18 @@ import com.sergiorosa.virtus.model.Estado;
 @Component
 public class CidadeServiceImpl implements ICidadeService{
 
-	@Autowired
+	@Autowired 
 	private CidadeDAO dao;
-	
 	
 	@Override
 	public List<Cidade> getCidadesByEstado(Estado e) {
+		// TODO Auto-generated method stub
 		return dao.findAllByEstado(e);
 	}
 
-
+	@Override
 	public Cidade getCidadeById(int id) {
-
+		// TODO Auto-generated method stub
 		return dao.findById(id).orElse(null);
 	}
-	
-
 }

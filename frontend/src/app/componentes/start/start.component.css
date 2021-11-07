@@ -1,0 +1,13 @@
+h1 {
+  font-family: OptmusPrinceps;
+  color: #fff;
+  font-size: 5em;
+  margin-top: 2em;
+}
+
+a,
+a:hover,
+a:link,
+a:visited {
+  text-decoration: none;
+}

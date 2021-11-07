@@ -12,7 +12,7 @@ import javax.persistence.Table;
 public class Estado {
 	
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Column(name="id")
 	private int id;
 	
@@ -21,7 +21,6 @@ public class Estado {
 	
 	@Column(name="uf", length = 2, nullable = false)
 	private String uf;
-	
 	
 	public int getId() {
 		return id;
@@ -41,6 +40,7 @@ public class Estado {
 	public void setUf(String uf) {
 		this.uf = uf;
 	}
+	
 	
 	
 
