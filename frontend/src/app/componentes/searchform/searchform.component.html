@@ -30,7 +30,7 @@
           class="form-select"
           id="selectCidade"
           (change)="buscarParoquias()"
-          [(ngModel)]="idCity"
+          [(ngModel)]="idCidade"
           aria-label="Selecao de Cidades"
         >
           <option *ngFor="let CIDADE of listaCidades" value="{{ CIDADE.id }}">

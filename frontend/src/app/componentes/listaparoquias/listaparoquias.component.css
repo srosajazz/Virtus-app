@@ -1,0 +1,21 @@
+h3 {
+  font-family: "OptmusPrinceps";
+  color: #fff;
+  text-decoration: none;
+}
+
+a,
+a:active,
+a:link,
+a:visited {
+  color: #000;
+  opacity: 1;
+}
+.linhaParoquia {
+  background-color: #fff;
+  opacity: 0.7;
+  margin-bottom: 2px;
+  margin-left: 5px;
+  margin-right: 5px;
+  border-radius: 10px;
+}

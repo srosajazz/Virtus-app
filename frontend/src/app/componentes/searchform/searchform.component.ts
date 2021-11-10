@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { EstadosService } from 'src/app/servicos/estados.service';
-import { Estado } from '../model/Estado';
-
+import { Router } from '@angular/router';
 import { CidadesService } from 'src/app/servicos/cidades.service';
+import { EstadosService } from 'src/app/servicos/estados.service';
 import { Cidade } from '../model/Cidade';
+import { Estado } from '../model/Estado';
 
 @Component({
   selector: 'app-searchform',
@@ -14,12 +14,13 @@ export class SearchformComponent implements OnInit {
   public listaEstados: Estado[] = [];
   public listaCidades: Cidade[] = [];
   public idEstado: number = 0;
-  public idCity: number = 0;
+  public idCidade: number = 0;
 
   // Make sure create constructor this way
   constructor(
     private estadoService: EstadosService,
-    private cidadeService: CidadesService
+    private cidadeService: CidadesService,
+    private router: Router
   ) {}
 
   // Make sure create constructor this way
@@ -46,5 +47,7 @@ export class SearchformComponent implements OnInit {
     );
   }
 
-  public buscarParoquias() {}
+  public buscarParoquias() {
+    this.router.navigate(['listaparoquias', this.idCidade]);
+  }
 }
